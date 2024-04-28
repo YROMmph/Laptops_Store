@@ -3,17 +3,28 @@ package OOp;
 import OOp.family_tree.FamilyTree;
 import OOp.human.Gender;
 import OOp.human.Human;
+import java.io.File;
+import OOp.writer.FileHandler;
 
 import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-
+        String filePath = "D:\\рабочий стол\\java_projects\\OOp\\writer";
+        // FamilyTree tree = read(filePath);
 
         FamilyTree tree = testTree();
         System.out.println(tree);
 
-
+        save(tree, filePath);
+    }
+    static FamilyTree read(String filePath){
+        FileHandler fileHandler = new FileHandler();
+        return (FamilyTree) fileHandler.read(filePath);
+    }
+    static void save(FamilyTree familyTree, String filePath){
+        FileHandler fileHandler = new FileHandler();
+        fileHandler.save(familyTree, filePath);
     }
 
     static FamilyTree testTree(){

@@ -1,11 +1,13 @@
 package OOp.human;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+// import java.io.File;
 import java.util.List;
 
-public class Human {
+public class Human implements Serializable {
     private long id;
     private String name;
     private Gender gender;
@@ -15,6 +17,7 @@ public class Human {
     private Human father;
     private List<Human> children;
     private Human spouse;
+
 
     public Human(String name, Gender gender, LocalDate birthDate, LocalDate deathDate,
                  Human father, Human mother) {
